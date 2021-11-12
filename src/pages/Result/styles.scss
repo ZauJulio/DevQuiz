@@ -1,0 +1,120 @@
+@import "../../styles/global.scss";
+
+.result-container {
+  @include flex-box($direction: column);
+  margin: 7rem 0;
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    margin: 1rem 0;
+
+    overflow: auto !important;
+    width: 90%;
+
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+
+    table {
+      @include max-size-percent();
+      border-radius: 10px;
+
+      thead {
+        background: #3e415a;
+        font-weight: bold;
+
+        tr {
+          td {
+            font-family: "Courier New", Courier, monospace;
+            padding: 1rem 0;
+
+            &:first-of-type {
+              border-top-left-radius: 10px;
+            }
+
+            &:last-of-type {
+              border-top-right-radius: 10px;
+            }
+          }
+        }
+      }
+
+      tbody {
+        background: $attention;
+
+        tr {
+          td {
+            text-align: left;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              white-space: pre-line;
+              background: #ba9fe01e;
+            }
+          }
+
+          .colum-question,
+          .column-answer {
+            max-width: 10rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            font-weight: 800;
+
+            span {
+              font-weight: normal;
+            }
+          }
+
+          .column-answer {
+            width: 5rem;
+            max-width: 10rem;
+          }
+
+          .column-result {
+            max-width: 1rem;
+            width: 1rem;
+          }
+
+          &:last-of-type {
+            td {
+              &:first-of-type {
+                border-bottom-left-radius: 10px;
+              }
+
+              &:last-of-type {
+                border-bottom-right-radius: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      tfoot {
+        tr {
+          td {
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+            padding: 0.5rem 0;
+          }
+        }
+      }
+
+      td {
+        text-align: center;
+      }
+    }
+  }
+
+  .restart {
+    @include flex-box();
+    padding: 1rem;
+    margin-top: 3rem;
+    background: $dark-purple !important;
+    color: $text;
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../styles/global.scss";
+
+.btn {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+  background: $purple;
+  border-radius: 10px;
+  font-size: 1.2rem;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
